@@ -27,10 +27,26 @@ public class AppClienteBanco {
                     String conta = entrada.next();
                     //chamada ao método remoto, como se fosse executar localmente
                     System.out.println(banco.saldo(conta));
+                    break;
                 }
                 case 2: {
                     //chamada ao método remoto, como se fosse executar localmente
                     System.out.println(banco.quantidadeContas());
+                    break;
+                }
+                case 3: {
+                    System.out.println("Digite o número da conta: ");
+                    String numero = entrada.next();
+
+                    System.out.println("Digite o saldo: ");
+                    Double saldo = Double.parseDouble(entrada.next());
+
+                    banco.adicionarConta(numero, saldo);
+                    break;
+                }
+                default: {
+                    System.out.println("Opção inválida!");
+                    break;
                 }
             }
             menu();
@@ -39,9 +55,11 @@ public class AppClienteBanco {
     }
 
     public static void menu() {
-        System.out.println("\n=== BANCO RMI (ou FMI?!) ===");
+        System.out.println("######## DIEGO FRANKNEY FRAZÃO DA SILVA ########");
+        System.out.println("\n=== BANCO DO FRAZÃO ===");
         System.out.println("1 - Saldo da conta");
         System.out.println("2 - Quantidade de contas");
+        System.out.println("3 - Cadastrar conta");
         System.out.println("9 - Sair");
     }
 
